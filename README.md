@@ -1,6 +1,3 @@
-# streamlit-predictor-cricket
-Stream-Lit deployment for Cricket-Score-Predictor
-
 ## Testing Code - After initial cloning of the repository
 - run the command `pipenv shell`
 - install the dependencies `pipenv install`
