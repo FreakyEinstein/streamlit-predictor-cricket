@@ -31,16 +31,6 @@ overs = st.number_input(
 striker = st.text_input('Enter the striker name')
 non_striker = st.text_input('Enter the non-striker name')
 
-model_ready = False
-reg = RandomForestRegressor(n_estimators=100, max_features=None)
-reg.fit(X_train, y_train)
-model_ready = True
-
-disabled = True
-
-if runs and wickets and overs and striker and non_striker:
-    disabled = False
-
 start_prediction = False
 if st.button('Predcit Score'):
     new_values = np.array(
@@ -50,6 +40,16 @@ if st.button('Predcit Score'):
 else:
     st.write(
         'Click on the above button to predict the score and wait until the result shows up!!')
+
+model_ready = False
+reg = RandomForestRegressor(n_estimators=100, max_features=None)
+reg.fit(X_train, y_train)
+model_ready = True
+
+disabled = True
+
+if runs and wickets and overs and striker and non_striker:
+    disabled = False
 
 
 if start_prediction and model_ready:
